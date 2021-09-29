@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 
-open_file = open("sitka_weather_2018_simple.csv", "r")
+open_file = open("death_valley_2018_simple.csv", "r")
 
 csv_file = csv.reader(open_file,delimiter=",")
 
@@ -23,29 +23,29 @@ for index, column_header in enumerate(header_row):
     print(index, column_header)
 
 
-
-# testing to convert date from string
-# date is coming in as a text format, need to specify what format it's in 
-my_date = datetime.strptime('2018-07-01', '%Y-%m-%d') 
-print(my_date)
-print(type(my_date))
-
-
 #create an empty list called highs 
 highs = []
 lows = []
 dates = []
 
 for row in csv_file:
-    lows.append(int(row[6]))
-    the_date = datetime.strptime(row[2], '%Y-%m-%d')
-    dates.append(the_date)
-    highs.append(int(row[5]))
+    try:
+        the_date = datetime.strptime(row[2], '%Y-%m-%d')
+        high = int(row[4])
+        low = int(row[5])
+    except ValueError:
+        print(f"Missing data for {the_date}")
+        # what does the f do? new method introduced, allows us to incorporate variables directly into our statements, called the f string method
+    else:
+        lows.append(int(row[5]))
+        dates.append(the_date)
+        highs.append(int(row[4]))
 
-print(highs)
-print(lows)
-print(dates)
+#print(highs)
+#print(lows)
+#print(dates)
 
+'''
 #plt for pyplot is standard alias/best practice 
 #pyplot is an object, so plt is an object as well, doing this as a chart 
 import matplotlib.pyplot as plt
@@ -89,4 +89,4 @@ plt.suptitle("Highs and Lows of Sitka, Alaska")
 plt.show()
 
 
-
+'''

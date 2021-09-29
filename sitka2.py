@@ -67,4 +67,6 @@ fig.autofmt_xdate()
 plt.show()
 
 
-
+# quiz 1 how to create class definiton, how to create instances, how to use a dictionary, class def file, program file and upload both of those files
+# accessor and mutator methods, create instances on that object and use it in the dictionary 
+# first thing in class, 40 minutes, make sure that you prepare, look over examples of program files and class definitions

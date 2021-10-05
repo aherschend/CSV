@@ -45,7 +45,7 @@ for row in csv_file:
 #print(lows)
 #print(dates)
 
-'''
+
 #plt for pyplot is standard alias/best practice 
 #pyplot is an object, so plt is an object as well, doing this as a chart 
 import matplotlib.pyplot as plt
@@ -89,4 +89,3 @@ plt.suptitle("Highs and Lows of Sitka, Alaska")
 plt.show()
 
 
-'''
